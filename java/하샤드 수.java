@@ -31,21 +31,21 @@ class Solution {
         if(x == 10000){
             n[0] = x / 10000;
         }
-        else if(1000 <= x) { 
+        else if(1000 <= x) {
             n[0] = x / 1000;
             n[1] = x % 1000 / 100;
             n[2] = x % 1000 % 100 / 10;
             n[3] = x % 1000 % 100 % 10;
         }
-        else if(100 <= x) { 
+        else if(100 <= x) {
             n[0] = x / 100;
             n[1] = x % 100 / 10;
             n[2] = x % 100 % 10;
         }
-        else if(10 <= x) { 
+        else if(10 <= x) {
             n[0] = x / 10;
             n[1] = x % 10;
-        } else n[0] = x; 
+        } else n[0] = x;
         for(int i = 0; i < 5; i++){
             sum += n[i];
         }
