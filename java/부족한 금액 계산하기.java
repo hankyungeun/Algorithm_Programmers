@@ -33,3 +33,18 @@ class Solution {
         else return 0;
     }
 }
+
+/*
+ * 맨 처음 정답률이 86%밖에 안나와서 왜그런지 한참 들여다 봤는데
+ * sum의 데이터 타입이 int라 숫자가 커지면서 오버 플로우가 발생한것..
+ * 앞으로 sum을 선언할 때는 무조건 long으로 선언해야 하는가..
+ */
+
+ ////////////////////////////////////////////////////////class Solution {
+    public long solution(int price, int money, int count) {
+        // 등차수열 사용
+        long totalCost = (long) price * count * (count + 1) / 2;
+        long shortfall = totalCost - money;
+        return shortfall > 0 ? shortfall : 0;
+    }
+}
