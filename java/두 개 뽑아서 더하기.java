@@ -30,14 +30,32 @@
     12 = 5 + 7 입니다.
     따라서 [2,5,7,9,12] 를 return 해야 합니다.
  */
-//////////////////////////////////////////////////////////
-/* 오름 차순 정렬을 해야되서 set으로 담고 list로 반환했는데
- * TreeSet을 사용하면 add하면서 동시에 정렬이 된다고 한다!!
- */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.TreeSet;
+
+class Solution {
+    public ArrayList<Integer> solution(int[] numbers) {
+        HashSet<Integer> resultSet = new HashSet<>();
+
+        for(int i = 0; i < (numbers.length) - 1; i++){
+            for(int j = i + 1; j < numbers.length; j++){
+                resultSet.add(numbers[i] + numbers[j]);
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>(resultSet);
+        Collections.sort(list);
+
+        return list;
+    }
+}
+
+//////////////////////////////////////////////////////////
+/* 오름 차순 정렬을 해야되서 set으로 담고 list로 반환했는데
+ * TreeSet을 사용하면 동시에 정렬이 된다고 한다!!
+ */
+
+ import java.util.*;
 
 class Solution {
     public TreeSet<Integer> solution(int[] numbers) {
