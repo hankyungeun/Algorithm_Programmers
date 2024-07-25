@@ -4,32 +4,37 @@
 
     제한사항
     n은 1 이상 100,000,000 이하인 자연수입니다.
+    
     입출력 예
     n	result
     45	7
     125	229
+    
     입출력 예 설명
     입출력 예 #1
 
     답을 도출하는 과정은 다음과 같습니다.
     n (10진법)	n (3진법)	앞뒤 반전(3진법)	10진법으로 표현
-    45	1200	0021	7
+    45	        1200	    0021	            7
     따라서 7을 return 해야 합니다.
+    
     입출력 예 #2
-
     답을 도출하는 과정은 다음과 같습니다.
     n (10진법)	n (3진법)	앞뒤 반전(3진법)	10진법으로 표현
-    125	11122	22111	229
+    125	        11122	    22111	            229
     따라서 229를 return 해야 합니다.
 */
 
 class Solution {
     public int solution(int n) {
+        // 정수 n을 3진법으로 변환
         String str = Integer.toString(n, 3);
         String reverse = "";
+        // 3진법으로 변환한 숫자 뒤집기
         for (int i = str.length() - 1; i >= 0; i--) {
             reverse += str.charAt(i);
         }
+        // 문자열 타입을 10진법 정수로 변환
         return Integer.parseInt(reverse, 3);
     }
 }
